@@ -178,6 +178,30 @@ systemctl disable --now insights-client || true
 systemctl disable --now abrt || true
 systemctl disable --now packagekit || true
 
+echo "[+] Installing OSINT tools..."
+git clone https://github.com/soxoj/maigret
+pip3 install -r maigret/requirements.txt
+ln -sf $INSTALL_DIR/maigret/maigret.py /usr/local/bin/maigret
+
+git clone https://github.com/Lissy93/web-check
+git clone https://github.com/tejado/telegram-nearby-map
+git clone https://github.com/megadose/holehe
+pip3 install holehe
+
+git clone https://github.com/Ullaakut/cameradar
+git clone https://github.com/bee-san/Ciphey
+pip3 install ciphey
+
+git clone https://github.com/commixproject/commix
+ln -sf $INSTALL_DIR/commix/commix.py /usr/local/bin/commix
+
+git clone https://github.com/jonaslejon/malicious-pdf
+git clone https://github.com/n1nj4sec/pupy
+pip3 install evil-winrm 
+git clone https://github.com/BloodHoundAD/BloodHound.git
+pip3 install crackmapexec
+
+
 ###########################################################
 ### DONE
 ###########################################################
